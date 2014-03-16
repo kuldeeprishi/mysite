@@ -1,0 +1,20 @@
+[
+{
+  "pk": 2, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "kuldeeprishi", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2014-03-16T18:33:25.135Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$12000$mpklxnHjrj4f$BBU+AQwH5gJRwabr1xpAqFLV718ZnjwJtIijG86tM48=", 
+    "email": "kuldeep.rishi@yahoo.com", 
+    "date_joined": "2014-03-16T18:33:25.135Z"
+  }
+}
+]
