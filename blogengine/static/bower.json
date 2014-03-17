@@ -1,0 +1,21 @@
+{
+  "name": "static",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kuldeeprishi/mysite",
+  "authors": [
+    "Kuldeep Rishi <kuldeepkrishi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "blogengine/static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "html5-boilerplate": "~4.3.0"
+  }
+}
