@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.views.generic import ListView, DetailView
 from .models import Post, Category, Tag
-from .views import CategoryListView, TagListView
+from .views import CategoryListView, TagListView, PostsFeed
 
 
 urlpatterns = patterns('',
@@ -23,4 +23,8 @@ urlpatterns = patterns('',
 		paginate_by=5,
 		model=Tag,
 		)),
+
+	# Post RSS Feed
+	url(r'^feeds/posts/$', PostsFeed()),
+	
 	)

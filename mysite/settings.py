@@ -138,6 +138,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'south',
     'countdown',
+    'django.contrib.syndication',
 )
 
 USER_APPS = (
