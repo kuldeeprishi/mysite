@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Category
+
+
+class CategoryAdmin(admin.ModelAdmin):
+	pass
+
 
 class PostAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug": ("title",)}
@@ -10,3 +15,4 @@ class PostAdmin(admin.ModelAdmin):
 		obj.save()
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Category, CategoryAdmin)
