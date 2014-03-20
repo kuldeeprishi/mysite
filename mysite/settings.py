@@ -104,6 +104,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'countdown.middleware.CountdownMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -136,6 +137,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'south',
+    'countdown',
 )
 
 USER_APPS = (
@@ -174,3 +176,6 @@ LOGGING = {
         },
     }
 }
+
+import datetime
+COUNTDOWN_TARGET_DATE = datetime.datetime(2013, 01, 01, 00, 00, 00, 000000)

@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 
 
 class Post(models.Model):
@@ -6,6 +8,8 @@ class Post(models.Model):
 	pub_date = models.DateTimeField()
 	text = models.TextField()
 	slug = models.SlugField(max_length=40, unique=True)
+	author = models.ForeignKey(User)
+	site = models.ForeignKey(Site)
 
 	def get_absolute_url(self):
 		return "/{0}/{1}/{2}/".format(self.pub_date.year, self.pub_date.month, self.slug)
