@@ -225,3 +225,34 @@ class PostViewTest(BaseAcceptanceTest):
 
 		# Check the link is marked up properly
 		self.assertTrue('<a href="http://127.0.0.1:8000/">my first blog post</a>' in response.content)
+
+class FlatPageViewTest(BaseAcceptanceTest):
+	def test_create_flat_page(self):
+		page = FlatPage()
+		page.url = '/about/'
+		page.title = 'About me'
+		page.content = 'All about me'
+		page.save()
+
+		# Add the site
+		page.sites.add(Site.objects.all()[0])
+		page.save()
+
+		# Check new page saved
+		all_pages = FlatPage.objects.all()
+		self.assertEquals(len(all_pages), 1)
+		only_page = all_pages[0]
+		self.assertEquals(only_page, page)
+
+		# Check data correct
+		self.assertEquals(only_page.url, '/about/')
+		self.assertEquals(only_page.title, 'About me')
+		self.assertEquals(only_page.content, 'All about me')
+
+		page_url = only_page.get_absolute_url()
+
+		response = self.client.get(page_url)
+		self.assertEquals(response.status_code, 200)
+
+		self.assertTrue('About me' in response.content)
+		self.assertTrue('All about me' in response.content)
